@@ -1,1 +1,39 @@
+.wrapper{
+text-align:center;
 
+}
+h1{
+  background: lightgray;
+  padding:17px;
+  margin-top:0px;
+}
+
+#submit{
+margin-top:30px;
+font-size:20px;
+
+}
+.contact{
+  margin-bottom: 5px;
+ margin-top:10px;
+}
+ul{
+margin-top:2px;
+
+padding-left:12px;
+}
+footer{
+  margin-left:10px;
+  margin-bottom:5px;
+}
+@media(min-width:600px) {
+.wrapper{
+  height:calc(100vh-89px);
+}
+}
+@media (min-width : 970px ) {
+.wrapper{
+  width:70%;
+  margin:0 auto;
+}
+}
