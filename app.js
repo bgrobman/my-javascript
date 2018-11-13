@@ -6,10 +6,9 @@ const email = document.querySelector('#email');
 const firstName = document.querySelector('#fname');
 const lastName = document.querySelector('#lname');
 const number = document.querySelector('#number');
-let firstNameObject;
-let lastNameObject;
-let numberObject;
-let emailObject;
+let numberOfUsers = 0;
+
+
 
 // var request = new xmlHttpRequest();
 // request.open('GET','https://airtable.com/tblJRsH9v4qJSMXmy/viwChThv2QALQLTKE',true);
@@ -22,17 +21,20 @@ let emailObject;
 
 
 submit.addEventListener('click',(event)=>{
-for(let i = 0; i < 5 ; i  - 1){
+  numberOfUsers += 1;
+
   if( size.value ===  '8_hours'){
 size.style.color = 'red';
 }
 if(place.value == 'israel'){
   place.style.color = 'blue';
 }
-firstNameObject += name.value;
-lastNameObject += name.value;
- numberObject += number.value;
-  emailObject += email.value;
+for(let i = 0 ; i < numberOfUsers.length ; i += 1){
+ var userProfiles = [{
+  Name: firstName,
+  lastName: lastName,
+  number:number,
+  email: email
+},];
 }
-
 });
