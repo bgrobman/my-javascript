@@ -10,9 +10,11 @@ let numberOfUsers = 0;
 
 
 var xhr = new XMLHttpRequest();
-var url = 'ttps://api.airtable.com/v0/appGMs3wYCKeVkQnl/Table%201';
-url +='"Authorization: Bearer keyZ3s4zJ9nbnOFdZ" ';
-xhr.open('POST',url,true);
+var url = 'https://api.airtable.com/v0/appGMs3wYCKeVkQnl/Table%201';
+url +='Authorization: Bearer keyZ3s4zJ9nbnOFdZ';
+xhr.open('POST',url,);
+
+
 xhr.setRequestHeader('Content-Type','Content-Type: application/json');
 
 
@@ -27,11 +29,11 @@ submit.addEventListener('click',(event)=>{
 xhr.send(
   {
  "fields": {
-   "Name": "Binyamin grobman",
-   "Email address": "binyamin.grobman@gmail.com",
-   "Number": "0548452883",
-   "Time  of work requested": "8 hours",
-   "Location of user": "Israel"
+   "Name":uName,
+   "Email address":email,
+   "Number": number,
+   "Time  of work requested":size,
+   "Location of user":loc
  }
 }
 );
