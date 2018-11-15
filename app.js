@@ -10,15 +10,17 @@ let user = uName + email + number + size + code + loc ;
 let numberOfUsers = 0;
 
 
-var xhr = new XMLHttpRequest();
-var url = 'https://api.airtable.com/v0/appGMs3wYCKeVkQnl/Table%201?';
-url +='api_key=YOUR_API_KEY';
-xhr.open('POST',url,);
 
-
-xhr.setRequestHeader('Content-Type','Content-Type: application/json');
 submit.addEventListener('click',(event)=>{
   numberOfUsers += 1;
+
+  var xhr = new XMLHttpRequest();
+  var url = 'https://api.airtable.com/v0/appGMs3wYCKeVkQnl/Table%201?';
+  url += 'api_key=YOUR_API_KEY';
+  xhr.open('POST',url);
+
+
+  xhr.setRequestHeader('Content-Type','Content-Type: application/json');
 
 xhr.send(
   {
