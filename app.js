@@ -6,7 +6,7 @@ const email = document.querySelector('#email');
 const uName = document.querySelector('#name');
 const number = document.querySelector('#number');
 const code = document.querySelector('#project');
-let user = uName + email + number + size + code + loc ;
+// let user = uName + email + number + size + code + loc ;
 let numberOfUsers = 0;
 
 
@@ -25,11 +25,11 @@ submit.addEventListener('click',(event)=>{
 xhr.send(
   {
  "fields": {
-   "Name":uName,
-   "Email address":email,
-   "Number": number,
-   "Time  of work requested":size,
-   "Location of user":loc
+   "Name":uName.value,
+   "Email address":email.value,
+   "Number": number.value,
+   "Time  of work requested":size.value,
+   "Location of user":loc.value
  }
 }
 );
