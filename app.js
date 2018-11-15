@@ -5,24 +5,18 @@ const loc = document.querySelector('#place');
 const email = document.querySelector('#email');
 const uName = document.querySelector('#name');
 const number = document.querySelector('#number');
-const code = document.querySelector('#code');
+const code = document.querySelector('#project');
+let user = uName + email + number + size + code + loc ;
 let numberOfUsers = 0;
 
 
 var xhr = new XMLHttpRequest();
-var url = 'https://api.airtable.com/v0/appGMs3wYCKeVkQnl/Table%201';
-url +='Authorization: Bearer keyZ3s4zJ9nbnOFdZ';
+var url = 'https://api.airtable.com/v0/appGMs3wYCKeVkQnl/Table%201?';
+url +='api_key=YOUR_API_KEY';
 xhr.open('POST',url,);
 
 
 xhr.setRequestHeader('Content-Type','Content-Type: application/json');
-
-
-
-
-
-
-
 submit.addEventListener('click',(event)=>{
   numberOfUsers += 1;
 
