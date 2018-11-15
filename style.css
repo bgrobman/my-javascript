@@ -1,9 +1,15 @@
+body{
+  display:flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 .wrapper{
 text-align:center;
-
+flex:1;
 }
 h1{
-  background: lightgray;
+  background: lightgreen;
   padding:17px;
   margin-top:0px;
 }
@@ -19,13 +25,16 @@ font-size:20px;
 }
 ul{
 margin-top:2px;
-
+margin-left: 15px;
 padding-left:12px;
 }
 footer{
-  margin-left:10px;
-  margin-bottom:5px;
+
+ padding-left:20px;
+  background:lightgray
+  ;
 }
+
 @media(min-width:600px) {
 .wrapper{
   height:calc(100vh-89px);
