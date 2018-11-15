@@ -10,8 +10,8 @@ let numberOfUsers = 0;
 
 
 var xhr = new XMLHttpRequest();
-var url = 'https://api.airtable.com/v0/appGMs3wYCKeVkQnl/Table%201';
-url += 'Authorization:Bearer_keyZ3s4zJ9nbnOFdZ';
+var url = 'https://api.airtable.com/v0/appGMs3wYCKeVkQnl/Table%201?';
+url += 'api_key=keyZ3s4zJ9nbnOFdZ';
 xhr.open('POST',url,true);
 xhr.setRequestHeader('Content-Type','Content-Type: application/json');
 
