@@ -11,7 +11,7 @@ let numberOfUsers = 0;
 
 var xhr = new XMLHttpRequest();
 var url = 'https://api.airtable.com/v0/appGMs3wYCKeVkQnl/Table%201?';
-url += 'api_key=keyZ3s4zJ9nbnOFdZ';
+url +='api_key=keyZ3s4zJ9nbnOFdZ';
 xhr.open('POST',url,true);
 xhr.setRequestHeader('Content-Type','Content-Type: application/json');
 
@@ -24,7 +24,17 @@ xhr.setRequestHeader('Content-Type','Content-Type: application/json');
 submit.addEventListener('click',(event)=>{
   numberOfUsers += 1;
 
-xhr.send('fields = Name: "akiva"');
+xhr.send(
+  {
+ "fields": {
+   "Name": "Binyamin grobman",
+   "Email address": "binyamin.grobman@gmail.com",
+   "Number": "0548452883",
+   "Time  of work requested": "8 hours",
+   "Location of user": "Israel"
+ }
+}
+);
 
 });
 
