@@ -20,7 +20,7 @@ submit.addEventListener('click',(event)=>{
   xhr.open('POST',url);
 
 
- xhr.setRequestHeader('Content-Type','Content-Type: application/json');
+ xhr.setRequestHeader('Content-Type','application/json');
 
 var data = {
 "fields": {
