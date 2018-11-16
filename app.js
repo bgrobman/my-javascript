@@ -15,8 +15,8 @@ submit.addEventListener('click',(event)=>{
   numberOfUsers += 1;
 
   var xhr = new XMLHttpRequest();
-  var url = 'https://api.airtable.com/v0/appGMs3wYCKeVkQnl/Table%201?api_key=YOUR_API_KEY';
-  
+  var url = 'https://api.airtable.com/v0/appGMs3wYCKeVkQnl/Table%201?api_key=keyZ3s4zJ9nbnOFdZ';
+
   xhr.open('POST',url);
 
 
