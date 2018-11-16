@@ -20,9 +20,9 @@ submit.addEventListener('click',(event)=>{
   xhr.open('POST',url);
 
 
-  xhr.setRequestHeader('Content-Type','Content-Type: application/json');
+ xhr.setRequestHeader('Content-Type','Content-Type: application/json');
 
-xhr.send(
+xhr.send(JSON.stringify
   {
  "fields": {
    "Name":uName.value,
