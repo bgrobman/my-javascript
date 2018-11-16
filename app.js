@@ -23,7 +23,7 @@ submit.addEventListener('click',(event)=>{
  xhr.setRequestHeader('Content-Type','Content-Type: application/json');
 
 xhr.send(JSON.stringify
-  {
+  ({
  "fields": {
    "Name":uName.value,
    "Email address":email.value,
@@ -32,7 +32,7 @@ xhr.send(JSON.stringify
    "Location of user":loc.value
  }
 }
-);
+));
 
 });
 
