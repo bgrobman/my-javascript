@@ -22,17 +22,20 @@ submit.addEventListener('click',(event)=>{
 
  xhr.setRequestHeader('Content-Type','Content-Type: application/json');
 
-xhr.send(JSON.stringify
-  ({
- "fields": {
-   "Name":uName.value,
-   "Email address":email.value,
-   "Number": number.value,
-   "Time  of work requested":size.value,
-   "Location of user":loc.value
- }
+var data = {
+"fields": {
+ "Name":uName.value,
+ "Email address":email.value,
+ "Number": number.value,
+ "Time  of work requested":size.value,
+ "Location of user":loc.value
 }
-));
+};
+
+
+xhr.send(JSON.stringify(data));
+
+
 
 });
 
