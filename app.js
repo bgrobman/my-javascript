@@ -1,30 +1,28 @@
-
-const size = document.getElementById('size');
 const submit = document.getElementById('submit');
+const size = document.getElementById('size');
 const loc = document.querySelector('#place');
 const email = document.querySelector('#email');
 const uName = document.querySelector('#name');
 const number = document.querySelector('#number');
 const code = document.querySelector('#project');
- let user =  [ ];
+ let user =  [size ,loc,email,uName,number,code];
 let numberOfUsers = 0;
-let check = false;
+let check = true;
 
-function err(obb){
-alert('you did not fill in the required info.');
-}
+
+
 
 submit.addEventListener('click',(event)=>{
   numberOfUsers += 1;
 
-  if(uName.value === '' || number.value === '' || email.value === '' || loc.value === ''){
-  check = false;
-  err();
-}else{
-check = true;
-}
+  for(let i = 0; i < user.length ; i += 1){
+    if(user[i].value === ''){
+    alert('you did not fill in the required info for the ' +user[i].name + ' input.' );
+   check = false;
+    }
+  }
 
-if(check === true){
+if(check === true ){
   var xhr = new XMLHttpRequest();
   var url = 'https://api.airtable.com/v0/appGMs3wYCKeVkQnl/Table%201?api_key=keyZ3s4zJ9nbnOFdZ';
   var data = {
@@ -44,38 +42,3 @@ xhr.send(JSON.stringify(data));
 
 }
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// for(let i = 0; i < numberOfUsers.length ; i += 1){
-//   let user [i] = firstName + lastName + number + email + loc;
-// }
-// }
-// for(let i = 0 ; i < numberOfUsers.length ; i += 1){
-//  let userProfiles = [ ];
-//  if( size.value ===  '8_hours' || place.value == toLowerCase('israel'){
-//     userProfiles.unshift({
-//   Name: firstName,
-//   lastName: lastName,
-//   number:number,
-//   email: email
-// });
-// }else{
-//   userProfiles.push({
-// Name: firstName,
-// lastName: lastName,
-// number:number,
-// email: email
-// });
-// }
