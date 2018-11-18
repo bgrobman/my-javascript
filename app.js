@@ -6,16 +6,13 @@ const email = document.querySelector('#email');
 const uName = document.querySelector('#name');
 const number = document.querySelector('#number');
 const code = document.querySelector('#project');
-// let user = uName + email + number + size + code + loc ;
+ let user =  [ ];
 let numberOfUsers = 0;
 let check = false;
 
 function err(obb){
-alert('you did not fill in the required info');
+alert('you did not fill in the required info for the ' + obb + ' input.');
 }
-
-
-
 
 submit.addEventListener('click',(event)=>{
   numberOfUsers += 1;
@@ -26,7 +23,6 @@ submit.addEventListener('click',(event)=>{
 }else{
 check = true;
 }
-
 
 if(check === true){
   var xhr = new XMLHttpRequest();
