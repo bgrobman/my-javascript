@@ -11,7 +11,7 @@ let numberOfUsers = 0;
 let check = false;
 
 function err(obb){
-alert('you did not fill in the required info for the ' + obb + ' input.');
+alert('you did not fill in the required info.');
 }
 
 submit.addEventListener('click',(event)=>{
