@@ -4,6 +4,8 @@ body{
   min-height: 100vh;
 }
 
+
+
 .wrapper{
 text-align:center;
 flex:1;
@@ -15,7 +17,9 @@ h1{
 }
 
 input{
+  margin:0 auto;
   margin-bottom: 4px;
+
 }
 
 #submit{
