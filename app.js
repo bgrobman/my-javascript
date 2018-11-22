@@ -13,6 +13,7 @@ let valid = false;
 var url = 'https://api.airtable.com/v0/appGMs3wYCKeVkQnl/Table%201?api_key=keyZ3s4zJ9nbnOFdZ';
 
 
+
 // test if inputs are empty
 function test(val){
 let empty = '';
@@ -51,20 +52,28 @@ check = false;
 }
 
 //check if data already excists in database
-function validate(field){
+function validate(data){
   let xhr1 = new XMLHttpRequest();
   xhr1.open('GET',url);
   xhr1.onreadystatechange = function(){
-    if(xhr1.readyState === 4){
-
+    if(xhr1.readyState === 4 ){
+     if( xhr1.status === 200 ){
+     var response = JSON.parse(xhr1.responseText);
+     for(let i  = 0; i < response.length ;i+= 1){
+       if(response[i] === data ){
+       alert('the data you gave already exists in the database.');
+       check = false;
+     }else{check = true}
+   }
+     }else{
+       alert(xhr1.statusText);
+       check = false
+     }
 
       }
     }
   xhr1.send();
 }
-
-
-
 
 
 //sends data to server
@@ -74,6 +83,7 @@ if(check === true){
 ValidateEmail(email);
   isNumber(uName);
 }
+
 
 var data = {
 "fields": {
@@ -87,6 +97,7 @@ var data = {
 };
 
   if(check === true){
+    validate(data);
   var xhr = new XMLHttpRequest();
   xhr.open('POST',url);
  xhr.setRequestHeader('Content-Type','application/json');
