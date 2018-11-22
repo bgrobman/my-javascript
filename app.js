@@ -59,7 +59,7 @@ function validate(data){
     if(xhr1.readyState === 4 ){
      if( xhr1.status === 200 ){
      var response = JSON.parse(xhr1.responseText);
-     for(let i  = 0; i < response.length ;i+= 1){
+     for(let i  = 0; i < response.length ; i += 1){
        if(response[i] === data ){
        alert('the data you gave already exists in the database.');
        check = false;
@@ -84,7 +84,6 @@ ValidateEmail(email);
   isNumber(uName);
 }
 
-
 var data = {
 "fields": {
  "Name":uName.value,
@@ -97,7 +96,7 @@ var data = {
 };
 
   if(check === true){
-    validate(data);
+  validate(data);
   var xhr = new XMLHttpRequest();
   xhr.open('POST',url);
  xhr.setRequestHeader('Content-Type','application/json');
