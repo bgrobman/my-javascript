@@ -7,12 +7,9 @@ const uName = document.querySelector('#name');
 const number = document.querySelector('#number');
 const code = document.querySelector('#project');
 const user = [uName,email,number,loc];
-
 let check = false;
 let valid = false;
 var url = 'https://api.airtable.com/v0/appGMs3wYCKeVkQnl/Table%201?api_key=keyZ3s4zJ9nbnOFdZ';
-
-
 
 // test if inputs are empty
 function test(val){
@@ -23,13 +20,11 @@ let empty = '';
    check = false;
  }
 }
-
   if(empty !== ''){
     alert('You did not fill in the info for the ' + empty + ' input(s).' );
 } else{
   check = true;
 }
-
 }
 
 //email validation
@@ -40,9 +35,9 @@ function ValidateEmail(mail)
   }else{
     alert("You have entered an invalid email address!");
     check = false;
-
   }
 }
+
 //check if input is number
 function isNumber(val){
  if(!isNaN(val.value)){
@@ -60,8 +55,8 @@ function validate(data){
      if( xhr1.status === 200 ){
      var response = JSON.parse(xhr1.responseText);
      for(let i  = 0; i < response.length ; i += 1){
-       if(response[i] === data ){
-       alert('the data you gave already exists in the database.');
+       if(response[i].name === data.UName.value ){
+       alert('the "Name" you gave already exists in the database.');
        check = false;
      }else{check = true}
    }
