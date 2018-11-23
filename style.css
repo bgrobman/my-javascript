@@ -4,12 +4,11 @@ body{
   min-height: 100vh;
 }
 
-
-
 .wrapper{
 text-align:center;
 flex:1;
 }
+
 h1{
   background: lightgreen;
   padding:17px;
@@ -37,9 +36,8 @@ margin-left: 15px;
 padding-left:12px;
 }
 footer{
-
- padding-left:20px;
-  background:lightgray
+padding-left:20px;
+background:lightgray
   ;
 }
 
