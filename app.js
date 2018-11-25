@@ -47,28 +47,10 @@ check = false;
 }
 
 //check if data already excists in database
-function validate(data){
-  let xhr1 = new XMLHttpRequest();
-  xhr1.open('GET',url);
-  xhr1.onreadystatechange = function(){
-    if(xhr1.readyState === 4 ){
-     if( xhr1.status === 200 ){
-     var response = JSON.parse(xhr1.responseText);
-     for(let i  = 0; i < response.length ; i += 1){
-       if(response[i].name === data.UName.value ){
-       alert('the "Name" you gave already exists in the database.');
-       check = false;
-     }else{check = true}
-   }
-     }else{
-       alert(xhr1.statusText);
-       check = false
-     }
+// function validate(data){
 
-      }
-    }
-  xhr1.send();
-}
+  // xhr1.send();
+// }
 
 
 //sends data to server
@@ -90,8 +72,31 @@ var data = {
 }
 };
 
+if(check === true){
+let xhr1 = new XMLHttpRequest();
+xhr1.open('GET',url);
+xhr1.onreadystatechange = function(){
+  if(xhr1.readyState === 4 ){
+   if( xhr1.status === 200 ){
+   const info = JSON.parse(xhr1.responseText);
+   for(let i  = 0; i < info.length ; i += 1){
+     if(info[i].fields.Name.value === data.fields.Name.value){
+     alert('The "Name" you gave already exists in the database.');
+     check = false;
+   }else{check = true}
+ }
+   }else{
+     alert(xhr1.statusText);
+     check = false
+   }
+
+    }
+  }
+  xhr1.send();
+}
+
   if(check === true){
-  validate(data);
+  // validate(data);
   var xhr = new XMLHttpRequest();
   xhr.open('POST',url);
  xhr.setRequestHeader('Content-Type','application/json');

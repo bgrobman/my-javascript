@@ -7,6 +7,7 @@ body{
 .wrapper{
 text-align:center;
 flex:1;
+padding-bottom:7px;
 }
 
 h1{
@@ -22,7 +23,7 @@ input{
 }
 
 #submit{
-margin-top:30px;
+margin-top:10px;
 font-size:20px;
 
 }
@@ -36,16 +37,15 @@ margin-left: 15px;
 padding-left:12px;
 }
 footer{
+
 padding-left:20px;
 background:lightgray
   ;
 }
 
-@media(min-width:600px) {
-.wrapper{
-  height:calc(100vh-89px);
-}
-}
+/* @media(min-width:600px) {
+
+} */
 @media (min-width : 970px ) {
 .wrapper{
   width:70%;
