@@ -10,7 +10,6 @@ const user = [uName,email,number,loc];
 let check = false;
 let valid = false;
 var url = 'https://api.airtable.com/v0/appGMs3wYCKeVkQnl/Table%201?api_key=keyZ3s4zJ9nbnOFdZ';
-
 // test if inputs are empty
 function test(val){
 let empty = '';
@@ -26,7 +25,6 @@ let empty = '';
   check = true;
 }
 }
-
 //email validation
 function ValidateEmail(mail)
 {
@@ -37,7 +35,6 @@ function ValidateEmail(mail)
     check = false;
   }
 }
-
 //check if input is number
 function isNumber(val){
  if(!isNaN(val.value)){
@@ -83,7 +80,9 @@ xhr1.onreadystatechange = function(){
      if(info[i].fields.Name.value === data.fields.Name.value){
      alert('The "Name" you gave already exists in the database.');
      check = false;
-   }else{check = true}
+   }else{
+     check = true;
+   }
  }
    }else{
      alert(xhr1.statusText);
