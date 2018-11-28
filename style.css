@@ -3,13 +3,11 @@ body{
   flex-direction: column;
   min-height: 100vh;
 }
-
 .wrapper{
 text-align:center;
 flex:1;
 padding-bottom:7px;
 }
-
 h1{
   background: lightgreen;
   padding:17px;
@@ -19,18 +17,18 @@ h1{
 input{
   margin:0 auto;
   margin-bottom: 4px;
-
 }
 
 #submit{
 margin-top:10px;
 font-size:20px;
-
 }
+
 .contact{
   margin-bottom: 5px;
  margin-top:10px;
 }
+
 ul{
 margin-top:2px;
 margin-left: 15px;

@@ -25,6 +25,7 @@ let empty = '';
   check = true;
 }
 }
+
 //email validation
 function ValidateEmail(mail)
 {
@@ -83,7 +84,6 @@ var data = {
  "Type Of Work": code.value
 }
 };
-
 
 if(check === true){
   var xmlhttp = new XMLHttpRequest();
