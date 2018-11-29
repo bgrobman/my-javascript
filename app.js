@@ -71,7 +71,7 @@ submit.addEventListener('click',(event)=>{
   if(check === true){
   ValidateEmail(email);
     isNumber(uName);
-        // validate(data);
+    isNumber(loc);
   }
 
 var data = {
@@ -90,6 +90,7 @@ if(check === true){
   xmlhttp.onreadystatechange = function() {
    if (this.readyState == 4 && this.status == 200) {
     var myArr = JSON.parse(xmlhttp.responseText);
+    // working with the recived data
      for(let i = 0 ; i < myArr.records.length ; i += 1){
       if(myArr.records[i].fields.Name === data.fields.Name){
   check = false;
@@ -103,7 +104,7 @@ if(check === true){
   xmlhttp.send();
 }
 
-  if(check === true ){
+  if(check === true){
   var xhr = new XMLHttpRequest();
   xhr.open('POST',url);
  xhr.setRequestHeader('Content-Type','application/json');
