@@ -86,7 +86,7 @@ var data = {
 }
 };
 
-  
+
 
 
 
@@ -116,6 +116,5 @@ if(check === true){
   xhr.open('POST',url);
  xhr.setRequestHeader('Content-Type','application/json');
 xhr.send(JSON.stringify(data));
-
 }
 });
