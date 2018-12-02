@@ -7,6 +7,7 @@ const uName = document.querySelector('#name');
 const number = document.querySelector('#number');
 const code = document.querySelector('#project');
 const user = [uName,email,number,loc];
+let valid = true;
 let check = false;
 let x = 0;
 var url = 'https://api.airtable.com/v0/appGMs3wYCKeVkQnl/Table%201?api_key=keyZ3s4zJ9nbnOFdZ';
@@ -85,6 +86,11 @@ var data = {
 }
 };
 
+  
+
+
+
+
 if(check === true){
   var xmlhttp = new XMLHttpRequest();
   xmlhttp.onreadystatechange = function() {
@@ -93,6 +99,7 @@ if(check === true){
     // working with the recived data
      for(let i = 0 ; i < myArr.records.length ; i += 1){
       if(myArr.records[i].fields.Name === data.fields.Name){
+  valid = false;
   check = false;
  }
 }  if(check === false){
@@ -101,10 +108,10 @@ if(check === true){
 }
 }
   xmlhttp.open("GET",url);
-  xmlhttp.send();
+  xmlhttp.send()
 }
 
-  if(check === true){
+  if(check === true && valid === true){
   var xhr = new XMLHttpRequest();
   xhr.open('POST',url);
  xhr.setRequestHeader('Content-Type','application/json');
