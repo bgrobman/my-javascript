@@ -75,7 +75,7 @@ submit.addEventListener('click',(event)=>{
     isNumber(loc);
   }
 
-var data = {
+var info = {
 "fields": {
  "Name":uName.value,
  "Email address":email.value,
@@ -86,35 +86,61 @@ var data = {
 }
 };
 
-
-
-
-
-
-if(check === true){
-  var xmlhttp = new XMLHttpRequest();
-  xmlhttp.onreadystatechange = function() {
-   if (this.readyState == 4 && this.status == 200) {
-    var myArr = JSON.parse(xmlhttp.responseText);
-    // working with the recived data
-     for(let i = 0 ; i < myArr.records.length ; i += 1){
-      if(myArr.records[i].fields.Name === data.fields.Name){
-  valid = false;
-  check = false;
- }
-}  if(check === false){
-    alert('the "Name" you gave already exsists in the database!');
-  }
+// if(check === true){
+//   var xmlhttp = new XMLHttpRequest();
+//   xmlhttp.onreadystatechange = function() {
+//    if (this.readyState == 4 && this.status == 200) {
+//     var myArr = JSON.parse(xmlhttp.responseText);
+//     // working with the recived data
+//      for(let i = 0 ; i < myArr.records.length ; i += 1){
+//       if(myArr.records[i].fields.Name === info.fields.Name){
+//   valid = false;
+//   check = false;
+//  }
+// }  if(check === false){
+//     alert('the "Name" you gave already exsists in the database!');
+//   }
+// }
+// }
+//   xmlhttp.open("GET",url);
+//   xmlhttp.send();
+// }
+fetch(url)
+.then(res => res.json())
+.then(data => {
+  for(let i = 0; i < data.records.length; i++){
+if(data.records[i].fields.Name === info.fields.Name){
+check = false;
 }
 }
-  xmlhttp.open("GET",url);
-  xmlhttp.send()
-}
+if(check === false){alert('The Name you gave already excists!' );}
+})
+.then( data => {if(check === true ){
+var xhr = new XMLHttpRequest();
+xhr.open('POST',url);
+xhr.setRequestHeader('Content-Type','application/json');
+xhr.send(JSON.stringify(info));
+}});
 
-  if(check === true && valid === true){
-  var xhr = new XMLHttpRequest();
-  xhr.open('POST',url);
- xhr.setRequestHeader('Content-Type','application/json');
-xhr.send(JSON.stringify(data));
-}
+
+
+//   if(check === true ){
+//   var xhr = new XMLHttpRequest();
+//   xhr.open('POST',url);
+//  xhr.setRequestHeader('Content-Type','application/json');
+// xhr.send(JSON.stringify(info));
+// }
+
 });
+
+
+// fetch(url)
+// .then(res => res.json())
+// .then(data => {
+//   for(let i = 0; i < data.records.length; i++){
+// if(data.records[i].fields.Name === info.fields.Name){
+// alert('The Name you gave already excists!' );
+// check = false;
+// }
+// }
+// })
